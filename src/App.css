@@ -1,0 +1,11 @@
+.hi{
+  display: none;
+}
+@media  (max-width:600px){
+  .ha{
+    display: none;
+  }
+  .hi{
+    display: block;
+  }
+}
