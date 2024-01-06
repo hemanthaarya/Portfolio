@@ -54,7 +54,7 @@ function Portfolio() {
     }
     const goToProjects=()=>{
         if(width>1538){
-            window.scrollTo(0,4150)
+            window.scrollTo(0,4230)
         }
         else{
             window.scrollTo(0,3350) 
