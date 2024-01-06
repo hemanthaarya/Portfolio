@@ -22,7 +22,7 @@ function Portfolio() {
     }
     const goToAbout=()=>{
         if(width>1538){
-            window.scrollTo(0,750)
+            window.scrollTo(0,850)
         }
         else{
             window.scrollTo(0,690);
@@ -30,7 +30,7 @@ function Portfolio() {
     }
     const goToEducation=()=>{
         if(width>1538){
-            window.scrollTo(0,1500)
+            window.scrollTo(0,1700)
         }
         else{
             window.scrollTo(0,1380);
@@ -38,7 +38,7 @@ function Portfolio() {
     }
     const goToSkills=()=>{
         if(width>1538){
-            window.scrollTo(0,2250)
+            window.scrollTo(0,2550)
         }
         else{
             window.scrollTo(0,2040);
@@ -46,7 +46,7 @@ function Portfolio() {
     }
     const goToExperience=()=>{
         if(width>1538){
-            window.scrollTo(0,3000)
+            window.scrollTo(0,3400)
         }
         else{
             window.scrollTo(0,2730)
@@ -54,7 +54,7 @@ function Portfolio() {
     }
     const goToProjects=()=>{
         if(width>1538){
-            window.scrollTo(0,3650)
+            window.scrollTo(0,4150)
         }
         else{
             window.scrollTo(0,3350) 
