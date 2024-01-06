@@ -15,24 +15,50 @@ function Portfolio() {
     const [isHovered2, setIsHovered2] = useState(false);
     const [isHovered3, setIsHovered3] = useState(false);
     const [click,setclick]=useState(false);
+    const [width]=useState(window.innerWidth)
 
     const goToHome=()=>{
         window.scrollTo(0,0);
     }
     const goToAbout=()=>{
-        window.scrollTo(0,690);
+        if(width>1538){
+            window.scrollTo(0,750)
+        }
+        else{
+            window.scrollTo(0,690);
+        }
     }
     const goToEducation=()=>{
-        window.scrollTo(0,1380);
+        if(width>1538){
+            window.scrollTo(0,1500)
+        }
+        else{
+            window.scrollTo(0,1380);
+        }
     }
     const goToSkills=()=>{
-        window.scrollTo(0,2040);
+        if(width>1538){
+            window.scrollTo(0,2250)
+        }
+        else{
+            window.scrollTo(0,2040);
+        }
     }
     const goToExperience=()=>{
-        window.scrollTo(0,2730)
+        if(width>1538){
+            window.scrollTo(0,3000)
+        }
+        else{
+            window.scrollTo(0,2730)
+        }
     }
     const goToProjects=()=>{
-        window.scrollTo(0,3350) 
+        if(width>1538){
+            window.scrollTo(0,3650)
+        }
+        else{
+            window.scrollTo(0,3350) 
+        }
     }
 
     
@@ -58,7 +84,7 @@ function Portfolio() {
     <div className='main'>
         <div className='navbar'>
             <div className='title'>
-                <h1>Portfolio</h1>
+                <h1 onClick={goToHome} style={{cursor:"pointer"}}>Portfolio</h1>
             </div>
             <div className='links'>
                 <h3 onClick={goToHome}>Home</h3>
@@ -72,7 +98,7 @@ function Portfolio() {
                 <div className='low' onClick={()=>{setclick(true)}} style={click ? {display:"none"} :{display:"block"}}><BiDotsVertical style={{width:"30px",height:"50px"}}/></div>
                 <div className='low1' onClick={()=>{setclick(false)}} style={!click ? {display:"none"} :{display:"block"}}><BiX style={{width:"30px",height:"50px"}}/></div>
                 <div  style={click ? { display:"block"} : {display:"none"}} className='resp' >
-                    <h3 onClick={goToHome1}>Home</h3>
+                    <h3 onClick={goToHome1}>Home </h3>
                     <h3 onClick={goToAbout1}>About</h3>
                     <h3 onClick={goToEducation1}>Education</h3>
                     <h3 onClick={goToSkills1}>Skills</h3>
@@ -107,7 +133,7 @@ function Portfolio() {
                     </div>
                 </div>
                 <div>
-                    <a href='https://drive.google.com/file/d/1r6vFacsJX-v6YUQ04BaD6j_MbA78pTXt/view?usp=drivesdk' target='_blank' rel="noreferrer" style={{textDecoration:"none"}}><div className='butt'>View Resume</div></a>
+                    <a href='https://drive.google.com/file/d/1_7omTrb8xwvLKMQ2_9oC5qwaXy2Lz_-q/view?usp=drive_link' target='_blank' rel="noreferrer" style={{textDecoration:"none"}}><div className='butt'>View Resume</div></a>
                 </div>
 
             </div>
