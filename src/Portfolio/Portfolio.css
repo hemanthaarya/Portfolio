@@ -251,7 +251,7 @@ td {
   -webkit-background-clip: text;
 }
 
-/* ================= SKILLS ================= */
+
 .skill {
   background-color: rgb(39, 37, 37);
 }
@@ -283,7 +283,7 @@ td {
   color: aqua;
 }
 
-/* ================= EXPERIENCE ================= */
+
 .experiences {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
@@ -311,7 +311,7 @@ td {
   color: white;
 }
 
-/* ================= PROJECTS ================= */
+
 .project {
   background-color: rgb(39, 37, 37);
 }
@@ -359,7 +359,7 @@ td {
   align-items: center;
 }
 
-/* ================= FOOTER ================= */
+
 .cp {
   background-color: rgb(39, 37, 37);
   color: white;
@@ -371,7 +371,7 @@ td {
   gap: 1rem;
 }
 
-/* ================= MOBILE ================= */
+
 @media (max-width: 768px) {
   .links {
     display: none;

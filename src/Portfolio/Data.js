@@ -88,7 +88,7 @@ const Experiences = [
 
 const Projects = [
   {
-    Image: logo,
+    Image: logo3,
     Title: "My Portfolio",
     Link: "https://keen-jelly-5087ca.netlify.app/",
   },

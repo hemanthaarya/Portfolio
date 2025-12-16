@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from 'react';
+import { useState} from 'react';
 import './Portfolio.css';
 import { BiExpand,BiUpArrowAlt,BiDotsVertical,BiX } from "react-icons/bi";
 import logo4 from "./Portfolio.jpg";
