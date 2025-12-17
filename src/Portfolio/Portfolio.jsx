@@ -1,4 +1,4 @@
-import { useState} from 'react';
+import React, { useState, useEffect } from "react";
 import './Portfolio.css';
 import { BiExpand,BiUpArrowAlt,BiDotsVertical,BiX } from "react-icons/bi";
 import logo4 from "./Portfolio.jpg";
@@ -8,6 +8,38 @@ import {Personal_Details,EducationDetails,Skills,Experiences,Projects} from './D
 function Portfolio() {
     const [isHovered, setIsHovered] = useState(false);
     const [click,setclick]=useState(false);
+    const [typedText, setTypedText] = useState("");
+    const [textIndex, setTextIndex] = useState(0);
+    const [charIndex, setCharIndex] = useState(0);
+    const [isDeleting, setIsDeleting] = useState(false);
+
+    useEffect(() => {
+    const currentText = Personal_Details.Designation[textIndex];
+
+    const timeout = setTimeout(() => {
+        if (!isDeleting && charIndex < currentText.length) {
+        // Typing
+        setTypedText(currentText.slice(0, charIndex + 1));
+        setCharIndex(prev => prev + 1);
+        } 
+        else if (isDeleting && charIndex > 0) {
+        // Deleting
+        setTypedText(currentText.slice(0, charIndex - 1));
+        setCharIndex(prev => prev - 1);
+        } 
+        else if (!isDeleting && charIndex === currentText.length) {
+        // Pause before deleting
+        setTimeout(() => setIsDeleting(true), 900);
+        } 
+        else if (isDeleting && charIndex === 0) {
+        // Move to next text
+        setIsDeleting(false);
+        setTextIndex((prev) => (prev + 1) % Personal_Details.Designation.length);
+        }
+    }, isDeleting ? 60 : 120);
+
+    return () => clearTimeout(timeout);
+    }, [charIndex, textIndex, isDeleting]);
     
 
   return (
@@ -47,7 +79,7 @@ function Portfolio() {
                         {}
                     </h2>
                     <h3>
-                        and i am a <p className='span'> {Personal_Details.Designation} </p>
+                        and i am a <span className="typing">{typedText}</span>
                     </h3>
                     <h4> </h4>
                 </div>
@@ -92,8 +124,8 @@ function Portfolio() {
                                                 <tr>
                                                     <th><h1>Level</h1></th>
                                                     <th><h1>Institution</h1></th>
-                                                    <th><h1>YearOfCompletion</h1></th>
-                                                    <th><h1>Percentage</h1></th>
+                                                    <th className='hid'><h1>YearOfCompletion</h1></th>
+                                                    <th className='hid'><h1>Percentage</h1></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -102,8 +134,8 @@ function Portfolio() {
                                                         <tr>
                                                             <td><h2>{item.Level}</h2></td>
                                                             <td><h2>{item.Institution}</h2></td>
-                                                            <td><h2>{item.YearOfCompletion}</h2></td>
-                                                            <td><h2>{item.Percentage}</h2></td>
+                                                            <td className='hid'><h2>{item.YearOfCompletion}</h2></td>
+                                                            <td className='hid'><h2>{item.Percentage}</h2></td>
                                                         </tr>
                                                     )
                                                 })}

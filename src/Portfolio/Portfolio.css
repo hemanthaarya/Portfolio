@@ -1,4 +1,4 @@
-/* ================= GLOBAL ================= */
+
 * {
   margin: 0;
   padding: 0;
@@ -21,7 +21,7 @@ section {
   padding: 4rem 1.25rem;
 }
 
-/* ================= NAVBAR ================= */
+
 .navbar {
   position: fixed;
   top: 0;
@@ -62,7 +62,7 @@ section {
   cursor: pointer;
 }
 
-/* Mobile menu */
+
 .resp {
   position: absolute;
   top: 4.5rem;
@@ -78,14 +78,14 @@ section {
 }
 
 .resp a {
-  color: white;
+  color: aqua;
+  text-decoration: none;
 }
 
 .resp h3:hover {
   color: aqua;
 }
 
-/* ================= HOME ================= */
 .about {
   display: flex;
   justify-content: space-between;
@@ -106,24 +106,16 @@ section {
   margin: 1rem 0;
 }
 
-.span {
+.typing {
   color: aqua;
-  border-right: 0.25rem solid;
-  white-space: nowrap;
-  overflow: hidden;
-  display: inline-block;
-  animation: typing 2s steps(17), cursor 0.4s infinite alternate;
+  border-right: 0.2rem solid aqua;
+  padding-right: 0.3rem;
+  animation: blink 0.8s infinite;
 }
 
-@keyframes cursor {
+@keyframes blink {
   50% {
     border-color: transparent;
-  }
-}
-
-@keyframes typing {
-  from {
-    width: 0;
   }
 }
 
@@ -162,10 +154,9 @@ section {
 }
 
 .img {
-  max-width: 22rem;
+  max-width: 28rem;
 }
 
-/* ================= ABOUT ME ================= */
 .about_me {
   background-color: rgb(39, 37, 37);
 }
@@ -177,6 +168,11 @@ section {
   max-width: 1200px;
   margin-inline: auto;
 }
+.about_me_pic{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .img1 {
   max-width: 22rem;
@@ -184,13 +180,13 @@ section {
 
 .about_me_matter {
   color: white;
+  text-align: center;
 }
 
 .about_me_matter p {
-  font-size: 1.125rem;
+  font-size: 1.5rem;
 }
 
-/* ================= EDUCATION ================= */
 .education {
   background-color: rgb(24, 23, 23);
 }
@@ -204,13 +200,15 @@ section {
 }
 
 .study {
+  width: 100%;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 table {
   width: 100%;
-  min-width: 600px;
   border-collapse: collapse;
+  table-layout: fixed;
 }
 
 th,
@@ -218,6 +216,9 @@ td {
   border: 1px solid #ccc;
   padding: 1rem;
   text-align: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 th {
@@ -373,6 +374,9 @@ td {
 
 
 @media (max-width: 768px) {
+  .hid{
+    display: none;
+  }
   .links {
     display: none;
   }
